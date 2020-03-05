@@ -26,3 +26,11 @@ const eoSecuriteImageContainer = document.querySelector('.js-eo-securite-image')
 const $eoSecuriteImage = new Image()
 $eoSecuriteImage.src = eoSecuriteImage
 eoSecuriteImageContainer.appendChild($eoSecuriteImage)
+
+// Boveroux
+import boverouxImage from './images/boveroux.png'
+
+const boverouxContainer = document.querySelector('.js-boveroux-image')
+const $boveroux = new Image()
+$boveroux.src = boverouxImage
+boverouxContainer.appendChild($boveroux)
