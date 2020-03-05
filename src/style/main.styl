@@ -14,33 +14,29 @@ $font-size-text = 1rem
 $color-black = #0E0E0E
 $color-white = #FAF8F8
 
-.black-color
-    color $color-black
-
-.white-color
-    color $color-white
+body
+    background $color-black
 
 // Reset
 *
     margin 0
     padding 0
 
-// Sections
-section
-    width 100vw
-    height 100vh
-
 // display-flex-row
 .display-flex-row
     display flex
     flex-direction row
 
+.svg-white
+    fill $color-white
+
 //////////////////////// HOME ////////////////////////
 // Section
 .home
     position relative
+    width 100vw
+    height 100vh
     color $color-white
-    background $color-black
     // Title
     .home-title
         position absolute
@@ -68,30 +64,35 @@ section
 //////////////////////// WORK ////////////////////////
 // Section
 .work
-    background-color $color-black
-    // Header
-    .header
-        padding 30px 100px 0px 100px
-        display flex
-        flex-direction row
-        justify-content space-between
-        align-items baseline 
-        .logo
-            text-transform none
-            text-decoration none
-            svg
-                fill $color-white
-        .about
-            font-family $font-title
-            font-size $font-size-subtitle
-            cursor pointer
-            &:hover
-                opacity 0.6
-                transition 0.3s
-                transition-timing-function ease-in-out
-    // Savoir project
+    // Savoir
+    .savoir-project
+        color $color-white
+    // Ode Brew Grinder
+    .ode-brew-grinder-project
+        color $color-black
+        background $color-white
+    // Common style
     .project
-        margin 50px 100px 0px 100px
+        height 100vh
+        padding 0px 100px
+        // Header
+        .header
+            padding 30px 0px 50px 0px
+            display flex
+            flex-direction row
+            justify-content space-between
+            align-items baseline
+            .logo
+                text-transform none
+                text-decoration none
+            .about
+                font-family $font-title
+                font-size $font-size-subtitle
+                cursor pointer
+                &:hover
+                    opacity 0.6
+                    transition 0.3s
+                    transition-timing-function ease-in-out
         .project-title
             margin-bottom 40px
             font-family $font-title
