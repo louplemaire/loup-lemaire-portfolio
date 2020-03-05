@@ -23,3 +23,34 @@ $color-white = #FAF8F8
 section
     width 100vw
     height 100vh
+
+//////////////////////// HOME ////////////////////////
+// Section
+.home
+    position relative
+    background $color-black
+    // Title
+    h1
+        position absolute
+        top 50%
+        left 50%
+        transform translate(-50%, -50%)
+        font-family $font-title
+        font-size 5rem
+        letter-spacing 0.5rem
+        color $color-white
+    // Scroll arrow
+    .look-work-arrow
+        position absolute
+        bottom 80px
+        left 50%
+        width 24px
+        height 24px
+        color $color-white
+        fill $color-white
+        transform translate(-50%) rotate(90deg)
+        cursor pointer
+        &:hover
+            opacity 0.6
+            transition 0.3s
+            transition-timing-function ease-in-out
