@@ -18,3 +18,11 @@ const odeBrewGrinderImageContainer = document.querySelector('.js-ode-brew-grinde
 const $odeBrewGrinderImage = new Image()
 $odeBrewGrinderImage.src = odeBrewGrinderImage
 odeBrewGrinderImageContainer.appendChild($odeBrewGrinderImage)
+
+// EO Securite
+import eoSecuriteImage from './images/eo-securite.png'
+
+const eoSecuriteImageContainer = document.querySelector('.js-eo-securite-image')
+const $eoSecuriteImage = new Image()
+$eoSecuriteImage.src = eoSecuriteImage
+eoSecuriteImageContainer.appendChild($eoSecuriteImage)
