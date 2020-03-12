@@ -1,8 +1,12 @@
-//////////////////////// IMPORTS ////////////////////////
+/**
+ * Imports
+ */
 // Stylus
 import './style/main.styl'
 
-//////////////////////// IMAGES ////////////////////////
+/**
+ * Images
+ */
 // Savoir
 import savoirImage from './images/savoir.png'
 
