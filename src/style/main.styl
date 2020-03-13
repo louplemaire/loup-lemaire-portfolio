@@ -71,14 +71,17 @@ body
 // Section
 .work
     // Savoir
-    .savoir-project, .eo-securite-project
+    .savoir-project
+    .eo-securite-project
         color $color-white
     // Ode Brew Grinder
-    .ode-brew-grinder-project, .boveroux-project
+    .ode-brew-grinder-project
+    .boveroux-project
         color $color-black
         background $color-white
     // Common style
     .project
+        position relative
         height 100vh
         padding 0px 100px
         // Header
@@ -110,12 +113,18 @@ body
                 height auto
         .project-info
             margin 80px 0px 0px 60px
-            .project-date, .project-tools, .project-team
+            .project-date
+            .project-tools
+            .project-team
                 margin-bottom 30px
-                .date-subtitle, .tools-subtitle, .team-subtitle
+                .date-subtitle
+                .tools-subtitle
+                .team-subtitle
                     font-family $font-title
                     font-size $font-size-subtitle
-                .date-info, .tools-info, .team-info
+                .date-info
+                .tools-info
+                .team-info
                     margin-left 5px
                     font-family $font-text
                     font-size $font-size-text
@@ -127,3 +136,18 @@ body
             font-family $font-text
             font-size $font-size-text
             line-height 24px
+        .call-to-scroll
+            position absolute
+            left 0px
+            bottom 60px
+            display flex
+            flex-direction row
+            align-items center
+            transform rotate(-90deg)
+            .scroll-line
+                width 20px
+                border 0.5px solid
+            .scroll-text
+                margin-left 5px
+                font-family $font-title
+                font-size 12px
