@@ -60,6 +60,7 @@ body
         fill $color-white
         transform translate(-50%) rotate(90deg)
         cursor pointer
+        will-change opacity
         &:hover
             opacity 0.6
             transition 0.3s
@@ -96,6 +97,7 @@ body
                 font-family $font-title
                 font-size $font-size-subtitle
                 cursor pointer
+                will-change opacity 
                 &:hover
                     opacity 0.6
                     transition 0.3s
@@ -146,7 +148,11 @@ body
                 font-family $font-title
                 font-size $font-size-subtitle
                 text-decoration none
-
+                will-change opacity
+            &:hover
+                opacity 0.6
+                transition 0.3s
+                transition-timing-function ease-in-out
             &::after
                 content ''
                 width 20px
