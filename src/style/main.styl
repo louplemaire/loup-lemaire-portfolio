@@ -70,13 +70,11 @@ body
  */
 // Section
 .work
-    // Savoir
-    .savoir-project
-    .eo-securite-project
+    .black-project
+    .black-project a
         color $color-white
-    // Ode Brew Grinder
-    .ode-brew-grinder-project
-    .boveroux-project
+    .white-project
+    .white-project a
         color $color-black
         background $color-white
     // Common style
@@ -136,18 +134,36 @@ body
             font-family $font-text
             font-size $font-size-text
             line-height 24px
-        .call-to-scroll
+        .see-project
             position absolute
-            left 0px
+            right 100px
+            bottom 100px
+            display flex
+            flex-direction row
+            align-items center
+            a
+                margin-right 5px
+                font-family $font-title
+                font-size $font-size-subtitle
+                text-decoration none
+
+            &::after
+                content ''
+                width 20px
+                border 0.5px solid
+        .scroll
+            position absolute
+            left 0
             bottom 60px
             display flex
             flex-direction row
             align-items center
             transform rotate(-90deg)
-            .scroll-line
-                width 20px
-                border 0.5px solid
-            .scroll-text
+            span
                 margin-left 5px
                 font-family $font-title
                 font-size 12px
+            &::before
+                content ''
+                width 20px
+                border 0.5px solid
