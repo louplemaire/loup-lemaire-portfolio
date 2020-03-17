@@ -19,19 +19,13 @@ $color-white = #FAF8F8
 body
     background $color-black
 
+.svg-white
+    fill $color-white
+
 // Reset
 *
     margin 0
     padding 0
-
-// display-flex-row
-.display-flex-row
-    display flex
-    flex-direction row
-    justify-content space-between
-
-.svg-white
-    fill $color-white
 
 /**
  * Home
@@ -105,33 +99,37 @@ body
                     transition-timing-function ease-in-out
         // Content
         .project-title
-            margin-bottom 40px
-            font-family $font-title
-            font-size $font-size-title
-        .project-image
-            width 49vw
-            img
-                width: 100%
-                height auto
-        .project-info
-            margin 80px 0px 0px 60px
-            .project-date
-            .project-tools
-            .project-team
-                margin-bottom 30px
-                .date-subtitle
-                .tools-subtitle
-                .team-subtitle
-                    font-family $font-title
-                    font-size $font-size-subtitle
-                .date-info
-                .tools-info
-                .team-info
-                    margin-left 5px
-                    font-family $font-text
-                    font-size $font-size-text
-                    line-height 24px
-                    opacity 0.65
+                margin-bottom 40px
+                font-family $font-title
+                font-size $font-size-title
+        .project-display-flex-row
+            display flex
+            flex-direction row
+            justify-content space-between
+            .project-image
+                width 49vw
+                img
+                    width: 100%
+                    height auto
+            .project-info
+                margin 80px 0px 0px 60px
+                .project-date
+                .project-tools
+                .project-team
+                    margin-bottom 30px
+                    .date-subtitle
+                    .tools-subtitle
+                    .team-subtitle
+                        font-family $font-title
+                        font-size $font-size-subtitle
+                    .date-info
+                    .tools-info
+                    .team-info
+                        margin-left 5px
+                        font-family $font-text
+                        font-size $font-size-text
+                        line-height 24px
+                        opacity 0.65
         .project-description
             width 46vw
             margin-top 50px
@@ -200,11 +198,15 @@ body
             transition 0.3s
             transition-timing-function ease-in-out
     // Content
-    .display-flex-row
+    .about-display-flex-row
+        display flex
+        flex-direction row
+        justify-content space-between
+        align-items center
         padding 140px 100px 0px 100px
         .about-content
+            width 40vw
             .about-me
-                width 49vw
                 .title
                     font-family $font-title
                     font-size $font-size-title
@@ -236,7 +238,7 @@ body
                             transition-timing-function ease-in-out
         .loup-image
             margin-left 100px
-            width 27vw
+            max-width 22vw
             img
                 width 100%
                 height auto
