@@ -149,7 +149,7 @@ body
                 font-family $font-title
                 font-size $font-size-subtitle
                 text-decoration none
-                will-change opacity
+                will-change transform, opacity
             &:hover
                 opacity 0.6
                 transition 0.3s
@@ -158,6 +158,11 @@ body
                 content ''
                 width 20px
                 border 0.5px solid
+            &:hover::after
+                animation-name animation-line-slide
+                animation-duration 1.5s
+                animation-timing-function ease-in-out
+                animation-iteration-count infinite
         // Call to scroll
         .scroll
             position absolute
@@ -255,3 +260,15 @@ body
     font-size 0.625rem
     font-weight 300
     opacity 0.7
+
+/**
+ * Animations
+ */
+// See project
+@keyframes animation-line-slide
+    0%
+        transform translateX(0px)
+    50%
+        transform translateX(5px)
+    100%
+        transform translateX(0px)
