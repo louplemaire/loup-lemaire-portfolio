@@ -91,7 +91,6 @@ window.addEventListener('wheel', (_event) => {
             // Block the scroll
             canScroll = false
         }
-        
     }
 })
 
