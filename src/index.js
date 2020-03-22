@@ -55,34 +55,44 @@ $loupImage.setAttribute('alt', 'Loup Lemaire image')
 /**
  * Scroll
  */
+// See work arrow
+const seeWorkArrow = document.querySelector('.js-see-work-arrow')
+seeWorkArrow.addEventListener('click', () => {
+    window.scrollBy(0, window.innerHeight)
+})
+
 // Block the scroll
-let canScroll = false
+let canScroll = true
 
 window.addEventListener('wheel', (_event) => {
-    // console.log(_event.deltaY)
+    if(canScroll){
+        _event.preventDefault()
 
-    // Accept the scroll
-    setTimeout(function() {
-        canScroll = true
-        console.log(canScroll);
-    }, 1000)
+        // Accept the scroll
+        setTimeout(function() {
+            canScroll = true
+            console.log(canScroll);
+        }, 2000)
 
-    // Scroll down
-    if((_event.deltaY > 0) && (canScroll == true)){
-        console.log('scroll down');
-        window.scrollBy(0, window.innerHeight)
+        // Scroll down
+        if(_event.deltaY > 0){
+            console.log('scroll down');
+            window.scrollBy(0, window.innerHeight)
 
-        // Block the scroll
-        canScroll = false
+            // Block the scroll
+            canScroll = false
+        }
+
+        // Scroll up
+        if(_event.deltaY < 0){
+            console.log('scroll up');
+            window.scrollBy(0, - window.innerHeight)
+
+            // Block the scroll
+            canScroll = false
+        }
+        
     }
-    // Scroll up
-    if((_event.deltaY < 0) && (canScroll == true)){
-        console.log('scroll up');
-        window.scrollBy(0, - window.innerHeight)
-
-        // Block the scroll
-        canScroll = false
-    }
-
-    console.log(canScroll);
 })
+
+console.log(canScroll);
