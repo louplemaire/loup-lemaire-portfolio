@@ -51,3 +51,38 @@ const $loupImage = new Image()
 $loupImage.src = loupImage
 loupImageContainer.appendChild($loupImage)
 $loupImage.setAttribute('alt', 'Loup Lemaire image')
+
+/**
+ * Scroll
+ */
+// Block the scroll
+let canScroll = false
+
+window.addEventListener('wheel', (_event) => {
+    // console.log(_event.deltaY)
+
+    // Accept the scroll
+    setTimeout(function() {
+        canScroll = true
+        console.log(canScroll);
+    }, 1000)
+
+    // Scroll down
+    if((_event.deltaY > 0) && (canScroll == true)){
+        console.log('scroll down');
+        window.scrollBy(0, window.innerHeight)
+
+        // Block the scroll
+        canScroll = false
+    }
+    // Scroll up
+    if((_event.deltaY < 0) && (canScroll == true)){
+        console.log('scroll up');
+        window.scrollBy(0, - window.innerHeight)
+
+        // Block the scroll
+        canScroll = false
+    }
+
+    console.log(canScroll);
+})
