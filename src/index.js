@@ -66,18 +66,29 @@ let canScroll = true
 
 window.addEventListener('wheel', (_event) => {
     if(canScroll){
-        _event.preventDefault()
+        // _event.preventDefault()
 
         // Accept the scroll
         setTimeout(function() {
             canScroll = true
-            console.log(canScroll);
         }, 2000)
 
         // Scroll down
         if(_event.deltaY > 0){
-            console.log('scroll down');
-            window.scrollBy(0, window.innerHeight)
+            // Transition opacity
+            const projects = document.querySelectorAll('.js-projects')
+
+            projects.forEach(_project => {
+                _project.style.opacity = 0
+
+                setTimeout(function() {
+                    _project.style.opacity = 1
+                }, 400)
+            })
+
+            setTimeout(function() {
+                window.scrollBy(0, window.innerHeight)
+            }, 400)
 
             // Block the scroll
             canScroll = false
@@ -85,13 +96,23 @@ window.addEventListener('wheel', (_event) => {
 
         // Scroll up
         if(_event.deltaY < 0){
-            console.log('scroll up');
-            window.scrollBy(0, - window.innerHeight)
+            // Transition opacity
+            const projects = document.querySelectorAll('.js-projects')
+
+            projects.forEach(_project => {
+                _project.style.opacity = 0
+
+                setTimeout(function() {
+                    _project.style.opacity = 1
+                }, 400)
+            })
+
+            setTimeout(function() {
+                window.scrollBy(0, - window.innerHeight)
+            }, 400)
 
             // Block the scroll
             canScroll = false
         }
     }
 })
-
-console.log(canScroll);
