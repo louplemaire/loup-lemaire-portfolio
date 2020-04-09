@@ -37,6 +37,8 @@ body
     width 100vw
     height 100vh
     color $color-white
+    transition opacity 0.4s
+    will-change opacity
     // Title
     .home-title
         position absolute
@@ -80,6 +82,7 @@ body
         height 100vh
         padding 0px 100px
         transition opacity 0.4s
+        will-change opacity
         // Header
         .header
             padding 30px 0px 50px 0px
@@ -94,7 +97,7 @@ body
                 font-family $font-title
                 font-size $font-size-subtitle
                 cursor pointer
-                will-change opacity 
+                will-change opacity
                 &:hover
                     opacity 0.6
                     transition 0.3s
