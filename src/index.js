@@ -76,13 +76,13 @@ window.addEventListener('wheel', (_event) => {
         // Scroll down
         if(_event.deltaY > 0){
             // Transition opacity
-            const projects = document.querySelectorAll('.js-projects')
+            const scrollTransitions = document.querySelectorAll('.js-scroll-transition')
 
-            projects.forEach(_project => {
-                _project.style.opacity = 0
+            scrollTransitions.forEach(_scrollTransition => {
+                _scrollTransition.style.opacity = 0
 
                 setTimeout(function() {
-                    _project.style.opacity = 1
+                    _scrollTransition.style.opacity = 1
                 }, 400)
             })
 
@@ -97,13 +97,13 @@ window.addEventListener('wheel', (_event) => {
         // Scroll up
         if(_event.deltaY < 0){
             // Transition opacity
-            const projects = document.querySelectorAll('.js-projects')
+            const scrollTransitions = document.querySelectorAll('.js-scroll-transition')
 
-            projects.forEach(_project => {
-                _project.style.opacity = 0
+            scrollTransitions.forEach(_scrollTransition => {
+                _scrollTransition.style.opacity = 0
 
                 setTimeout(function() {
-                    _project.style.opacity = 1
+                    _scrollTransition.style.opacity = 1
                 }, 400)
             })
 
