@@ -19,6 +19,12 @@ $color-white = #FAF8F8
 body
     overflow hidden
     background $color-black
+    animation 3s start-animation ease-in-out
+@keyframes start-animation
+    0%
+        opacity 0
+    100%
+        opacity 1
 
 .svg-white
     fill $color-white
@@ -40,7 +46,7 @@ body
     width 100vw
     height 100vh
     color $color-white
-    transition opacity 0.4s
+    transition opacity 0.4s ease-in-out
     will-change opacity
     // Title
     .home-title
@@ -65,8 +71,7 @@ body
         will-change opacity
         &:hover
             opacity 0.6
-            transition 0.3s
-            transition-timing-function ease-in-out
+            transition opacity 0.3s ease-in-out
 
 /**
  * Work
@@ -104,8 +109,7 @@ body
                 will-change opacity
                 &:hover
                     opacity 0.6
-                    transition 0.3s
-                    transition-timing-function ease-in-out
+                    transition opacity 0.3s ease-in-out
         // Content
         .project-title
                 margin-bottom 40px
@@ -157,21 +161,24 @@ body
                 font-family $font-title
                 font-size $font-size-subtitle
                 text-decoration none
-                will-change opacity
+                will-change opacity, transform
             &:hover
                 opacity 0.6
-                transition 0.3s
-                transition-timing-function ease-in-out
+                transition opacity 0.3s ease-in-out
             &::after
                 content ''
                 width 20px
                 border 0.5px solid
                 will-change transform
             &:hover::after
-                animation-name animation-line-slide
-                animation-duration 1.5s
-                animation-timing-function ease-in-out
-                animation-iteration-count infinite
+                animation 1.8s animation-line-slide ease-in-out infinite
+            @keyframes animation-line-slide
+                0%
+                    transform translateX(0px)
+                50%
+                    transform translateX(8px)
+                100%
+                    transform translateX(0px)
         // Call to scroll
         .scroll
             position absolute
@@ -218,8 +225,7 @@ body
             will-change opacity
             &:hover
                 opacity 0.6
-                transition 0.3s
-                transition-timing-function ease-in-out
+                transition opacity 0.3s ease-in-out
         // Content
         .about-display-flex-row
             display flex
@@ -257,8 +263,7 @@ body
                             will-change opacity
                             &:hover
                                 opacity 0.6
-                                transition 0.3s
-                                transition-timing-function ease-in-out
+                                transition opacity 0.3s ease-in-out
             .loup-image
                 margin-left 100px
                 max-width 22vw
@@ -278,15 +283,3 @@ body
     font-size 0.625rem
     font-weight 300
     opacity 0.7
-
-/**
- * Animations
- */
-// See project
-@keyframes animation-line-slide
-    0%
-        transform translateX(0px)
-    50%
-        transform translateX(5px)
-    100%
-        transform translateX(0px)
