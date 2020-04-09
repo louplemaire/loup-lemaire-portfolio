@@ -149,3 +149,18 @@ aboutCloseButton.addEventListener('click', () => {
         aboutPage.classList.add('is-visible')
     }, 400)
 })
+
+/**
+ * Logo button
+ */
+const home = document.querySelector('.js-home')
+const logos = document.querySelectorAll('.js-logo')
+
+logos.forEach(_logo => {
+    _logo.addEventListener('click', () => {
+        home.style.opacity = 0
+
+        // Reload the site
+        window.location.reload()
+    })
+})
