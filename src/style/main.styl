@@ -19,7 +19,7 @@ $color-white = #FAF8F8
 body
     overflow hidden
     background $color-black
-    animation 3s start-animation ease-in-out
+    animation 2s start-animation ease-in-out
 @keyframes start-animation
     0%
         opacity 0
@@ -46,7 +46,6 @@ body
     width 100vw
     height 100vh
     color $color-white
-    transition opacity 0.4s ease-in-out
     will-change opacity
     // Title
     .home-title
@@ -58,6 +57,8 @@ body
         font-family $font-title
         font-size 5rem
         letter-spacing 0.5rem
+        transition opacity 0.4s ease-in-out
+        will-change opacity
     // Scroll arrow
     .see-work-arrow
         position absolute
@@ -68,6 +69,7 @@ body
         fill $color-white
         transform translate(-50%) rotate(90deg)
         cursor pointer
+        transition opacity 0.4s ease-in-out
         will-change opacity
         &:hover
             opacity 0.6
