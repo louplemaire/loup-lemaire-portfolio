@@ -28,6 +28,9 @@ body
     margin 0
     padding 0
 
+.is-visible
+    display none
+
 /**
  * Home
  */
@@ -191,68 +194,77 @@ body
  * About
  */
 // Section
-.about
-    position relative
-    width 100vw
-    height 100vh
-    color $color-white
-    .close-button
-        position absolute
-        top 30px
-        right 100px
-        font-family $font-title
-        font-size $font-size-subtitle
-        cursor pointer
-        will-change opacity
-        &:hover
-            opacity 0.6
-            transition 0.3s
-            transition-timing-function ease-in-out
-    // Content
-    .about-display-flex-row
-        display flex
-        flex-direction row
-        justify-content space-between
-        align-items center
-        padding 140px 100px 0px 100px
-        .about-content
-            width 40vw
-            .about-me
-                .title
-                    font-family $font-title
-                    font-size $font-size-title
-                p
-                    margin-top 20px
-                    font-family $font-text
-                    font-size $font-size-text
-                    line-height 24px
-            .contact-me
-                margin-top 60px
-                .title
-                    font-family $font-title
-                    font-size $font-size-title
-                .media
-                    margin-top 20px
-                    font-family $font-text
-                    font-size $font-size-text
-                    line-height 24px
-                    display flex
-                    flex-direction column
-                    a
-                        margin-right 20px
-                        color $color-white
-                        text-decoration none
-                        will-change opacity
-                        &:hover
-                            opacity 0.6
-                            transition 0.3s
-                            transition-timing-function ease-in-out
-        .loup-image
-            margin-left 100px
-            max-width 22vw
-            img
-                width 100%
-                height auto
+.about-position
+    position fixed
+    top 0
+    left 0
+    background-color $color-black
+    z-index 300
+    opacity 0
+    transition opacity 0.4s
+    will-change opacity
+    .about
+        position relative
+        width 100vw
+        height 100vh
+        color $color-white
+        .close-button
+            position absolute
+            top 30px
+            right 100px
+            font-family $font-title
+            font-size $font-size-subtitle
+            cursor pointer
+            will-change opacity
+            &:hover
+                opacity 0.6
+                transition 0.3s
+                transition-timing-function ease-in-out
+        // Content
+        .about-display-flex-row
+            display flex
+            flex-direction row
+            justify-content space-between
+            align-items center
+            padding 140px 100px 0px 100px
+            .about-content
+                width 40vw
+                .about-me
+                    .title
+                        font-family $font-title
+                        font-size $font-size-title
+                    p
+                        margin-top 20px
+                        font-family $font-text
+                        font-size $font-size-text
+                        line-height 24px
+                .contact-me
+                    margin-top 60px
+                    .title
+                        font-family $font-title
+                        font-size $font-size-title
+                    .media
+                        margin-top 20px
+                        font-family $font-text
+                        font-size $font-size-text
+                        line-height 24px
+                        display flex
+                        flex-direction column
+                        a
+                            margin-right 20px
+                            color $color-white
+                            text-decoration none
+                            will-change opacity
+                            &:hover
+                                opacity 0.6
+                                transition 0.3s
+                                transition-timing-function ease-in-out
+            .loup-image
+                margin-left 100px
+                max-width 22vw
+                img
+                    width 100%
+                    height auto
 
 /**
  * Footer
