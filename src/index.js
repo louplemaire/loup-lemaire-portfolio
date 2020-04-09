@@ -55,10 +55,28 @@ $loupImage.setAttribute('alt', 'Loup Lemaire image')
 /**
  * Scroll
  */
+// Transition opacity
+const scrollTransition = () => {
+    const scrollTransitions = document.querySelectorAll('.js-scroll-transition')
+
+    scrollTransitions.forEach(_scrollTransition => {
+        _scrollTransition.style.opacity = 0
+
+        setTimeout(function() {
+            _scrollTransition.style.opacity = 1
+        }, 400)
+    })
+}
+
 // See work arrow
 const seeWorkArrow = document.querySelector('.js-see-work-arrow')
 seeWorkArrow.addEventListener('click', () => {
-    window.scrollBy(0, window.innerHeight)
+    // Transition opacity
+    scrollTransition()
+
+    setTimeout(function() {
+        window.scrollBy(0, window.innerHeight)
+    }, 400)
 })
 
 // Block the scroll
@@ -76,15 +94,7 @@ window.addEventListener('wheel', (_event) => {
         // Scroll down
         if(_event.deltaY > 0){
             // Transition opacity
-            const scrollTransitions = document.querySelectorAll('.js-scroll-transition')
-
-            scrollTransitions.forEach(_scrollTransition => {
-                _scrollTransition.style.opacity = 0
-
-                setTimeout(function() {
-                    _scrollTransition.style.opacity = 1
-                }, 400)
-            })
+            scrollTransition()
 
             setTimeout(function() {
                 window.scrollBy(0, window.innerHeight)
@@ -97,15 +107,7 @@ window.addEventListener('wheel', (_event) => {
         // Scroll up
         if(_event.deltaY < 0){
             // Transition opacity
-            const scrollTransitions = document.querySelectorAll('.js-scroll-transition')
-
-            scrollTransitions.forEach(_scrollTransition => {
-                _scrollTransition.style.opacity = 0
-
-                setTimeout(function() {
-                    _scrollTransition.style.opacity = 1
-                }, 400)
-            })
+            scrollTransition()
 
             setTimeout(function() {
                 window.scrollBy(0, - window.innerHeight)
