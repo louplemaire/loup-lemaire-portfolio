@@ -118,3 +118,34 @@ window.addEventListener('wheel', (_event) => {
         }
     }
 })
+
+/**
+ * Open and close the about
+ */
+// Open
+const aboutOpenButtons = document.querySelectorAll('.js-about-open-button')
+const aboutPage = document.querySelector('.js-about')
+
+aboutOpenButtons.forEach(_aboutOpenButton => {
+    // Open
+    _aboutOpenButton.addEventListener('click', () => {
+        aboutPage.classList.remove('is-visible')
+        
+        // Start opacity 1ms after the display to have the opacity transition
+        setTimeout(function() {
+            aboutPage.style.opacity = 1
+        }, 1)
+    })
+})
+
+// Close
+const aboutCloseButton = document.querySelector('.js-about-close-button')
+
+aboutCloseButton.addEventListener('click', () => {
+    aboutPage.style.opacity = 0
+
+    // Start display 400ms after the opacity to close the aboutPage after the 0.4s transition
+    setTimeout(function() {
+        aboutPage.classList.add('is-visible')
+    }, 400)
+})
