@@ -100,7 +100,7 @@ body
             display flex
             flex-direction row
             justify-content space-between
-            align-items baseline
+            align-items center
             .logo
                 text-transform none
                 text-decoration none
@@ -193,7 +193,7 @@ body
             span
                 margin-left 5px
                 font-family $font-title
-                font-size 12px
+                font-size 0.75rem
             &::before
                 content ''
                 width 20px
@@ -219,7 +219,7 @@ body
         color $color-white
         .close-button
             position absolute
-            top 30px
+            top 34px
             right 100px
             font-family $font-title
             font-size $font-size-subtitle
@@ -234,7 +234,7 @@ body
             flex-direction row
             justify-content space-between
             align-items center
-            padding 140px 100px 0px 100px
+            padding 114px 100px 0px 100px
             .about-content
                 width 40vw
                 .about-me
@@ -285,3 +285,99 @@ body
     font-size 0.625rem
     font-weight 300
     opacity 0.7
+
+/**
+ * Responsive
+ */
+@media screen and (orientation:portrait)
+    /**
+    * Home
+    */
+    // Section
+    .home
+        // Title
+        .home-title
+            font-size 2.5rem
+            letter-spacing 0.25rem
+        // Scroll arrow
+        .see-work-arrow
+            bottom 40px
+
+    /**
+    * Work
+    */
+    // Section
+    .work
+        // Common style
+        .project
+            padding 0px 30px
+            // Header
+            .header
+                padding 30px 0px 30px 0px
+                .about-button
+                    font-size $font-size-text
+            // Content
+            .project-title
+                    margin-bottom 20px
+                    font-size $font-size-subtitle
+            .project-display-flex-row
+                .project-image
+                    width 84vw
+                .project-info
+                    display none
+            .project-description
+                width 84vw
+                margin-top 30px
+                font-size 0.875rem
+                line-height 21px
+            // See project link
+            .see-project
+                right 30px
+                bottom 65px
+                a
+                    font-size $font-size-text
+            // Call to scroll
+            .scroll
+                left -10px
+                bottom 40px
+                span
+                    font-size 0.625rem
+
+    /**
+    * About
+    */
+    // Section
+    .about-position
+        .about
+            .close-button
+                top 36px
+                right 30px
+                font-size $font-size-text
+            // Content
+            .about-display-flex-row
+                padding 94px 30px 0px 30px
+                .about-content
+                    width 84vw
+                    .about-me
+                        .title
+                            font-size $font-size-subtitle
+                        p
+                            margin-top 10px
+                            font-size 0.875rem
+                            line-height 21px
+                    .contact-me
+                        margin-top 40px
+                        .title
+                            font-size $font-size-subtitle
+                        .media
+                            margin-top 10px
+                            font-size 0.875rem
+                            line-height 21px
+                .loup-image
+                    display none
+
+    /**
+    * Footer
+    */
+    .footer
+        bottom 10px
