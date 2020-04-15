@@ -91,12 +91,12 @@ body
     .project
         position relative
         height 100vh
-        padding 0px 100px
+        padding 0px 150px
         transition opacity 0.4s
         will-change opacity
         // Header
         .header
-            padding 30px 0px 50px 0px
+            padding 30px 0px 40px 0px
             display flex
             flex-direction row
             justify-content space-between
@@ -114,19 +114,19 @@ body
                     transition opacity 0.3s ease-in-out
         // Content
         .project-title
-                margin-bottom 40px
+                margin-bottom 30px
                 font-family $font-title
                 font-size $font-size-title
         .project-display-flex-row
             display flex
             flex-direction row
             .project-image
-                width 49vw
+                width 38vw
                 img
-                    width: 100%
+                    width 100%
                     height auto
             .project-info
-                margin 80px 0px 0px 60px
+                margin 80px 0px 0px 150px
                 .project-date
                 .project-tools
                 .project-team
@@ -145,15 +145,15 @@ body
                         line-height 24px
                         opacity 0.65
         .project-description
-            width 46vw
-            margin-top 50px
+            width 38vw
+            margin-top 30px
             font-family $font-text
             font-size $font-size-text
             line-height 24px
         // See project link
         .see-project
             position absolute
-            right 100px
+            right 150px
             bottom 100px
             display flex
             flex-direction row
@@ -173,14 +173,12 @@ body
                 border 0.5px solid
                 will-change transform
             &:hover::after
-                animation 1.8s animation-line-slide ease-in-out infinite
+                animation animation-line-slide 1s ease-in-out 0s infinite alternate both
             @keyframes animation-line-slide
                 0%
                     transform translateX(0px)
-                50%
-                    transform translateX(8px)
                 100%
-                    transform translateX(0px)
+                    transform translateX(8px)
         // Call to scroll
         .scroll
             position absolute
@@ -191,13 +189,14 @@ body
             align-items center
             transform rotate(-90deg)
             span
-                margin-left 5px
+                margin-left 15px
                 font-family $font-title
                 font-size 0.75rem
             &::before
                 content ''
                 width 20px
                 border 0.5px solid
+                animation animation-line-slide 1s ease-in-out 0s infinite alternate-reverse both
 
 /**
  * About
@@ -220,7 +219,7 @@ body
         .close-button
             position absolute
             top 34px
-            right 100px
+            right 150px
             font-family $font-title
             font-size $font-size-subtitle
             cursor pointer
@@ -234,7 +233,7 @@ body
             flex-direction row
             justify-content space-between
             align-items center
-            padding 114px 100px 0px 100px
+            padding 114px 150px 0px 150px
             .about-content
                 width 40vw
                 .about-me
@@ -289,7 +288,7 @@ body
 /**
  * Responsive
  */
-@media screen and (orientation:portrait)
+@media screen and (orientation: portrait)
     /**
     * Home
     */
@@ -299,9 +298,6 @@ body
         .home-title
             font-size 2.5rem
             letter-spacing 0.25rem
-        // Scroll arrow
-        .see-work-arrow
-            bottom 40px
 
     /**
     * Work
@@ -327,7 +323,7 @@ body
                     display none
             .project-description
                 width 84vw
-                margin-top 30px
+                margin-top 20px
                 font-size 0.875rem
                 line-height 21px
             // See project link
