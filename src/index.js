@@ -84,7 +84,7 @@ let canScroll = true
 
 window.addEventListener('wheel', (_event) => {
     if(canScroll){
-        // _event.preventDefault()
+        _event.preventDefault()
 
         // Accept the scroll
         setTimeout(function() {
