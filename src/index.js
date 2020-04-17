@@ -82,6 +82,7 @@ seeWorkArrow.addEventListener('click', () => {
 // Block the scroll
 let canScroll = true
 
+// Desktop
 window.addEventListener('wheel', (_event) => {
     if(canScroll){
         _event.preventDefault()
@@ -117,6 +118,49 @@ window.addEventListener('wheel', (_event) => {
             canScroll = false
         }
     }
+})
+
+// Mobile
+let touchStartY = null
+let touchEndY = null
+
+window.addEventListener('touchstart', (_event) => {
+    touchStartY = _event.touches[0].pageY
+})
+
+window.addEventListener('touchend', (_event) => {
+    // Don't execute if touchStartY is null
+    if(touchStartY === null){
+        return
+    }
+
+    touchEndY = _event.changedTouches[0].pageY
+
+    const offset = touchEndY - touchStartY
+
+    // Scroll down
+    if(offset < -50){
+        // Transition opacity
+        scrollTransition()
+
+        setTimeout(function() {
+            window.scrollBy(0, window.innerHeight)
+        }, 400)
+    }
+
+    // Scroll up
+    if(offset > 50){
+        // Transition opacity
+        scrollTransition()
+
+        setTimeout(function() {
+            window.scrollBy(0, - window.innerHeight)
+        }, 400)
+    }
+
+    // Reset
+    touchStartY = null
+    touchEndY = null
 })
 
 /**
