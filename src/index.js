@@ -134,33 +134,47 @@ window.addEventListener('touchend', (_event) => {
         return
     }
 
-    touchEndY = _event.changedTouches[0].pageY
-
-    const offset = touchEndY - touchStartY
-
-    // Scroll down
-    if(offset < -50){
-        // Transition opacity
-        scrollTransition()
-
+    if(canScroll){
+        // Accept the scroll
         setTimeout(function() {
-            window.scrollBy(0, window.innerHeight)
-        }, 400)
+            canScroll = true
+        }, 2000)
+
+        touchEndY = _event.changedTouches[0].pageY
+
+        // Determined the scroll down or up
+        const offset = touchEndY - touchStartY
+
+        // Scroll down
+        if(offset < -50){
+            // Transition opacity
+            scrollTransition()
+
+            setTimeout(function() {
+                window.scrollBy(0, window.innerHeight)
+            }, 400)
+
+            // Block the scroll
+            canScroll = false
+        }
+
+        // Scroll up
+        if(offset > 50){
+            // Transition opacity
+            scrollTransition()
+
+            setTimeout(function() {
+                window.scrollBy(0, - window.innerHeight)
+            }, 400)
+
+            // Block the scroll
+            canScroll = false
+        }
+
+        // Reset
+        touchStartY = null
+        touchEndY = null
     }
-
-    // Scroll up
-    if(offset > 50){
-        // Transition opacity
-        scrollTransition()
-
-        setTimeout(function() {
-            window.scrollBy(0, - window.innerHeight)
-        }, 400)
-    }
-
-    // Reset
-    touchStartY = null
-    touchEndY = null
 })
 
 /**
