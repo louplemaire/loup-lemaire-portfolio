@@ -84,9 +84,9 @@ let canScroll = true
 
 // Desktop
 window.addEventListener('wheel', (_event) => {
-    if(canScroll){
-        _event.preventDefault()
+    _event.preventDefault()
 
+    if(canScroll){
         // Accept the scroll
         setTimeout(function() {
             canScroll = true
@@ -125,6 +125,8 @@ let touchStartY = null
 let touchEndY = null
 
 window.addEventListener('touchstart', (_event) => {
+    _event.preventDefault()
+
     touchStartY = _event.touches[0].pageY
 })
 
