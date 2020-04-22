@@ -19,7 +19,7 @@ $color-white = #FAF8F8
 body
     overflow hidden
     background-color $color-black
-    animation 2s start-animation ease-in-out
+    animation start-animation 2s ease-in-out
 @keyframes start-animation
     0%
         opacity 0
@@ -46,6 +46,7 @@ body
     width 100vw
     height 100vh
     color $color-white
+    transition opacity 0.4s
     will-change opacity
     // Title
     .home-title
