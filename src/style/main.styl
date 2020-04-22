@@ -158,12 +158,13 @@ body
             display flex
             flex-direction row
             align-items center
+            cursor pointer
             a
                 margin-right 5px
                 font-family $font-title
                 font-size $font-size-subtitle
                 text-decoration none
-                will-change opacity, transform
+                will-change opacity
             &:hover
                 opacity 0.6
                 transition opacity 0.3s ease-in-out
@@ -171,7 +172,7 @@ body
                 content ''
                 width 20px
                 border 0.5px solid
-                will-change transform
+                will-change opacity, transform
             &:hover::after
                 animation animation-line-slide 1s ease-in-out 0s infinite alternate both
             @keyframes animation-line-slide
@@ -188,15 +189,25 @@ body
             flex-direction row
             align-items center
             transform rotate(-90deg)
+            cursor pointer
             span
                 margin-left 15px
                 font-family $font-title
                 font-size 0.75rem
+                transition opacity 0.4s ease-in-out
+                will-change opacity
+            &:hover
+                opacity 0.6
+                transition opacity 0.3s ease-in-out
             &::before
                 content ''
                 width 20px
                 border 0.5px solid
                 animation animation-line-slide 1s ease-in-out 0s infinite alternate-reverse both
+                will-change opacity
+            &:hover::before
+                opacity 0.6
+                transition opacity 0.3s ease-in-out
 
 /**
  * About
