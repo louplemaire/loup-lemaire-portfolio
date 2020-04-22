@@ -74,11 +74,11 @@ const scrollButtons = document.querySelectorAll('.js-scroll-button')
 scrollButtons.forEach(_scrollButton => {
     _scrollButton.addEventListener('click', () => {
         // Transition opacity
-    scrollTransition()
+        scrollTransition()
 
-    setTimeout(function() {
-        window.scrollBy(0, window.innerHeight)
-    }, 400)
+        setTimeout(function() {
+            window.scrollBy(0, window.innerHeight)
+        }, 400)
     })
 })
 
