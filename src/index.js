@@ -69,14 +69,17 @@ const scrollTransition = () => {
 }
 
 // See work arrow
-const seeWorkArrow = document.querySelector('.js-see-work-arrow')
-seeWorkArrow.addEventListener('click', () => {
-    // Transition opacity
+const scrollButtons = document.querySelectorAll('.js-scroll-button')
+
+scrollButtons.forEach(_scrollButton => {
+    _scrollButton.addEventListener('click', () => {
+        // Transition opacity
     scrollTransition()
 
     setTimeout(function() {
         window.scrollBy(0, window.innerHeight)
     }, 400)
+    })
 })
 
 // Block the scroll
