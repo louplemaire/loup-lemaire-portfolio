@@ -45,6 +45,7 @@ body
     position relative
     width 100vw
     height 100vh
+    height calc(var(--vh, 1vh) * 100)
     color $color-white
     transition opacity 0.4s
     will-change opacity
@@ -106,6 +107,7 @@ body
     .project
         position relative
         height 100vh
+        height calc(var(--vh, 1vh) * 100)
         padding 0px 150px
         transition opacity 0.4s
         will-change opacity
@@ -241,6 +243,7 @@ body
         position relative
         width 100vw
         height 100vh
+        height calc(var(--vh, 1vh) * 100)
         color $color-white
         .close-button
             position absolute
