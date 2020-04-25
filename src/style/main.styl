@@ -52,14 +52,28 @@ body
     .home-title
         position absolute
         top 50%
+        display flex
+        direction row
+        justify-content center
         width 100vw
-        text-align center
         transform translateY(-50%)
         font-family $font-title
         font-size 5rem
-        letter-spacing 0.5rem
+        letter-spacing 1rem
         transition opacity 0.4s ease-in-out
         will-change opacity
+        .home-title-space
+            margin-left 30px
+        span
+            animation home-title-animation 1s ease-in-out 0s 1 normal both
+            will-change opacity, transform
+        @keyframes home-title-animation
+            0%
+                opacity 0
+                transform translateY(30%)
+            100%
+                opacity 1
+                transform translateY(0%)
     // Scroll arrow
     .see-work-arrow
         position absolute
@@ -310,6 +324,8 @@ body
         .home-title
             font-size 2.5rem
             letter-spacing 0.25rem
+            .home-title-space
+                margin-left 15px
 
     /**
     * Work
