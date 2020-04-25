@@ -53,6 +53,13 @@ loupImageContainer.appendChild($loupImage)
 $loupImage.setAttribute('alt', 'Loup Lemaire image')
 
 /**
+ * Set the innerHeight
+ */
+const vh = window.innerHeight * 0.01
+
+document.documentElement.style.setProperty('--vh', `${vh}px`)
+
+/**
  * Home title animation
  */
 const letters = document.querySelectorAll('.home-title span')
@@ -88,7 +95,7 @@ scrollButtons.forEach(_scrollButton => {
         scrollTransition()
 
         setTimeout(function() {
-            window.scrollBy(0, window.innerHeight)
+            window.scrollBy(0, innerHeight)
         }, 400)
     })
 })
