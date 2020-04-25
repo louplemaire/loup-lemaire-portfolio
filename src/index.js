@@ -53,6 +53,17 @@ loupImageContainer.appendChild($loupImage)
 $loupImage.setAttribute('alt', 'Loup Lemaire image')
 
 /**
+ * Home title animation
+ */
+const letters = document.querySelectorAll('.home-title span')
+
+letters.forEach(_letter => {
+    const delay = Math.random() / 2
+
+    _letter.style.animationDelay = `${delay}s`
+})
+
+/**
  * Scroll
  */
 // Transition opacity
