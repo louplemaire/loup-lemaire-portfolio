@@ -142,7 +142,7 @@ window.addEventListener('wheel', (_event) => {
 })
 
 // Arrow
-window.addEventListener('keydown', (e) => {
+window.addEventListener('keydown', (_event) => {
     if(canScroll){
         // Accept the scroll
         setTimeout(function() {
@@ -150,7 +150,7 @@ window.addEventListener('keydown', (e) => {
         }, 2000)
 
         // Scroll down
-        if(e.keyCode == 40){
+        if(_event.keyCode == 40){
             // Transition opacity
             scrollTransition()
 
@@ -163,7 +163,7 @@ window.addEventListener('keydown', (e) => {
         }
 
         // Scroll up
-        if(e.keyCode == 38){
+        if(_event.keyCode == 38){
             // Transition opacity
             scrollTransition()
 
