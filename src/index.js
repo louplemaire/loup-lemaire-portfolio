@@ -141,6 +141,43 @@ window.addEventListener('wheel', (_event) => {
     }
 })
 
+// Arrow
+window.addEventListener('keydown', (e) => {
+    if(canScroll){
+        // Accept the scroll
+        setTimeout(function() {
+            canScroll = true
+        }, 2000)
+
+        // Scroll down
+        if(e.keyCode == 40){
+            // Transition opacity
+            scrollTransition()
+
+            setTimeout(function() {
+                window.scrollBy(0, window.innerHeight)
+            }, 400)
+
+            // Block the scroll
+            canScroll = false
+        }
+
+        // Scroll up
+        if(e.keyCode == 38){
+            // Transition opacity
+            scrollTransition()
+
+            setTimeout(function() {
+                window.scrollBy(0, - window.innerHeight)
+            }, 400)
+
+            // Block the scroll
+            canScroll = false
+        }
+    }
+    
+})
+
 // Mobile
 let touchStartY = null
 let touchEndY = null
