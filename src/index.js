@@ -86,17 +86,38 @@ const scrollTransition = () => {
     })
 }
 
-// See work arrow
+// Scroll down
+const scrollDown = () => {
+    // Transition opacity
+    scrollTransition()
+    
+    setTimeout(function() {
+        window.scrollBy(0, window.innerHeight)
+    }, 400)
+
+    // Block the scroll
+    canScroll = false
+}
+
+// Scroll up
+const scrollUp = () => {
+    // Transition opacity
+    scrollTransition()
+
+    setTimeout(function() {
+        window.scrollBy(0, - window.innerHeight)
+    }, 400)
+
+    // Block the scroll
+    canScroll = false
+}
+
+// Scroll buttons
 const scrollButtons = document.querySelectorAll('.js-scroll-button')
 
 scrollButtons.forEach(_scrollButton => {
     _scrollButton.addEventListener('click', () => {
-        // Transition opacity
-        scrollTransition()
-
-        setTimeout(function() {
-            window.scrollBy(0, innerHeight)
-        }, 400)
+        scrollDown()
     })
 })
 
@@ -115,28 +136,12 @@ window.addEventListener('wheel', (_event) => {
 
         // Scroll down
         if(_event.deltaY > 0){
-            // Transition opacity
-            scrollTransition()
-
-            setTimeout(function() {
-                window.scrollBy(0, window.innerHeight)
-            }, 400)
-
-            // Block the scroll
-            canScroll = false
+            scrollDown()
         }
 
         // Scroll up
         if(_event.deltaY < 0){
-            // Transition opacity
-            scrollTransition()
-
-            setTimeout(function() {
-                window.scrollBy(0, - window.innerHeight)
-            }, 400)
-
-            // Block the scroll
-            canScroll = false
+            scrollUp()
         }
     }
 })
@@ -151,28 +156,12 @@ window.addEventListener('keydown', (_event) => {
 
         // Scroll down
         if(_event.keyCode == 40){
-            // Transition opacity
-            scrollTransition()
-
-            setTimeout(function() {
-                window.scrollBy(0, window.innerHeight)
-            }, 400)
-
-            // Block the scroll
-            canScroll = false
+            scrollDown()
         }
 
         // Scroll up
         if(_event.keyCode == 38){
-            // Transition opacity
-            scrollTransition()
-
-            setTimeout(function() {
-                window.scrollBy(0, - window.innerHeight)
-            }, 400)
-
-            // Block the scroll
-            canScroll = false
+            scrollUp()
         }
     }
     
@@ -207,31 +196,15 @@ window.addEventListener('touchend', (_event) => {
 
         // Scroll down
         if(offset < -50){
-            // Transition opacity
-            scrollTransition()
-
-            setTimeout(function() {
-                window.scrollBy(0, window.innerHeight)
-            }, 400)
-
-            // Block the scroll
-            canScroll = false
+            scrollDown()
         }
 
         // Scroll up
         if(offset > 50){
-            // Transition opacity
-            scrollTransition()
-
-            setTimeout(function() {
-                window.scrollBy(0, - window.innerHeight)
-            }, 400)
-
-            // Block the scroll
-            canScroll = false
+            scrollUp()
         }
 
-        // Reset
+        // Reset the touch
         touchStartY = null
         touchEndY = null
     }
