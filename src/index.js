@@ -255,3 +255,65 @@ logos.forEach(_logo => {
         window.location.reload()
     })
 })
+
+/**
+ * Canvas cursor
+ */
+const $canvas = document.querySelector('canvas')
+const context = $canvas.getContext('2d')
+
+// Cursor
+const cursor = { x: 0, y: 0 }
+
+window.addEventListener('mousemove', (_event) => {
+    cursor.x = _event.clientX
+    cursor.y = _event.clientY
+})
+
+// Ball
+const ball = { x: 200, y: 200, radius: 18 }
+
+// Hover animation
+window.addEventListener('mouseover', (_event) => {
+    if(_event.target.classList.contains('js-canvas-hover')){
+        ball.radius = 30
+    } else{
+        ball.radius = 18
+    }
+})
+
+// Loop
+const loop = () => {
+    window.requestAnimationFrame(loop)
+
+    // Update position
+    ball.x += (cursor.x - ball.x) * 0.1
+    ball.y += (cursor.y - ball.y) * 0.1
+
+    // Erase the canvas
+    context.clearRect(0, 0, $canvas.width, $canvas.height)
+
+    // Drawing
+    context.beginPath()
+    context.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2)
+    context.globalAlpha = 1
+    context.strokeStyle = '#E40404'
+    context.stroke()
+}
+
+loop()
+
+// Sizes
+const sizes = { width: null, height: null }
+
+// Resize
+const resize = () => {
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
+
+    $canvas.width = sizes.width
+    $canvas.height = sizes.height
+}
+
+window.addEventListener('resize', resize)
+resize()
