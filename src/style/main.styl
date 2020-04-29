@@ -38,6 +38,18 @@ body
     display none
 
 /**
+ * Canvas cursor
+ */
+canvas
+    position fixed
+    top 0
+    left 0
+    height 100%
+    width 100%
+    pointer-events none
+    z-index 1000
+
+/**
  * Home
  */
 // Section
@@ -47,7 +59,7 @@ body
     height 100vh
     height calc(var(--vh, 1vh) * 100)
     color $color-white
-    transition opacity 0.4s
+    transition opacity 0.4s ease-in-out
     will-change opacity
     // Title
     .home-title
@@ -89,7 +101,6 @@ body
         will-change opacity
         &:hover
             opacity 0.6
-            transition opacity 0.3s ease-in-out
 
 /**
  * Work
@@ -109,7 +120,7 @@ body
         height 100vh
         height calc(var(--vh, 1vh) * 100)
         padding 0px 150px
-        transition opacity 0.4s
+        transition opacity 0.4s ease-in-out
         will-change opacity
         // Header
         .header
@@ -125,10 +136,10 @@ body
                 font-family $font-title
                 font-size $font-size-subtitle
                 cursor pointer
+                transition opacity 0.4s ease-in-out
                 will-change opacity
                 &:hover
                     opacity 0.6
-                    transition opacity 0.3s ease-in-out
         // Content
         .project-title
                 margin-bottom 30px
@@ -176,27 +187,21 @@ body
             flex-direction row
             align-items center
             cursor pointer
+            transition opacity 0.4s ease-in-out
+            will-change opacity, transform
             a
                 margin-right 5px
                 font-family $font-title
                 font-size $font-size-subtitle
                 text-decoration none
-                will-change opacity
-            &:hover
-                opacity 0.6
-                transition opacity 0.3s ease-in-out
             &::after
                 content ''
                 width 20px
                 border 0.5px solid
-                will-change opacity, transform
+            &:hover
+                opacity 0.6
             &:hover::after
                 animation animation-line-slide 1s ease-in-out 0s infinite alternate both
-            @keyframes animation-line-slide
-                0%
-                    transform translateX(0px)
-                100%
-                    transform translateX(8px)
         // Call to scroll
         .scroll
             position absolute
@@ -207,24 +212,26 @@ body
             align-items center
             transform rotate(-90deg)
             cursor pointer
+            transition opacity 0.4s ease-in-out
+            will-change opacity
             span
                 margin-left 15px
                 font-family $font-title
                 font-size 0.75rem
-                transition opacity 0.4s ease-in-out
-                will-change opacity
-            &:hover
-                opacity 0.6
-                transition opacity 0.3s ease-in-out
             &::before
                 content ''
                 width 20px
                 border 0.5px solid
                 animation animation-line-slide 1s ease-in-out 0s infinite alternate-reverse both
-                will-change opacity
-            &:hover::before
+            &:hover
                 opacity 0.6
-                transition opacity 0.3s ease-in-out
+
+// Animation-line-slide
+@keyframes animation-line-slide
+    0%
+        transform translateX(0px)
+    100%
+        transform translateX(8px)
 
 /**
  * About
@@ -237,7 +244,7 @@ body
     background-color $color-black
     z-index 300
     opacity 0
-    transition opacity 0.4s
+    transition opacity 0.4s ease-in-out
     will-change opacity
     .about
         position relative
@@ -252,10 +259,10 @@ body
             font-family $font-title
             font-size $font-size-subtitle
             cursor pointer
+            transition opacity 0.4s ease-in-out
             will-change opacity
             &:hover
                 opacity 0.6
-                transition opacity 0.3s ease-in-out
         // Content
         .about-display-flex-row
             display flex
@@ -290,10 +297,10 @@ body
                             margin-right 20px
                             color $color-white
                             text-decoration none
+                            transition opacity 0.3s ease-in-out
                             will-change opacity
                             &:hover
                                 opacity 0.6
-                                transition opacity 0.3s ease-in-out
             .loup-image
                 margin-left 100px
                 max-width 22vw
@@ -318,6 +325,12 @@ body
  * Responsive
  */
 @media screen and (orientation: portrait)
+    /**
+    * Canvas cursor
+    */
+    canvas
+        display none
+
     /**
     * Home
     */
