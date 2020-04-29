@@ -117,7 +117,14 @@ const scrollButtons = document.querySelectorAll('.js-scroll-button')
 
 scrollButtons.forEach(_scrollButton => {
     _scrollButton.addEventListener('click', () => {
-        scrollDown()
+        if(canScroll){
+            // Accept the scroll
+            setTimeout(function() {
+                canScroll = true
+            }, 2000)
+
+            scrollDown()
+        }
     })
 })
 
