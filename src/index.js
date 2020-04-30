@@ -71,7 +71,7 @@ letters.forEach(_letter => {
 })
 
 /**
- * Scroll
+ * Functions
  */
 // Transition opacity
 const scrollTransition = () => {
@@ -112,23 +112,10 @@ const scrollUp = () => {
     canScroll = false
 }
 
-// Scroll buttons
-const scrollButtons = document.querySelectorAll('.js-scroll-button')
-
-scrollButtons.forEach(_scrollButton => {
-    _scrollButton.addEventListener('click', () => {
-        if(canScroll){
-            // Accept the scroll
-            setTimeout(function() {
-                canScroll = true
-            }, 2000)
-
-            scrollDown()
-        }
-    })
-})
-
-// Block the scroll
+/**
+ * Scroll
+ */
+// Accept the scroll
 let canScroll = true
 
 // Desktop
@@ -153,7 +140,23 @@ window.addEventListener('wheel', (_event) => {
     }
 })
 
-// Arrow
+// Scroll buttons
+const scrollButtons = document.querySelectorAll('.js-scroll-button')
+
+scrollButtons.forEach(_scrollButton => {
+    _scrollButton.addEventListener('click', () => {
+        if(canScroll){
+            // Accept the scroll
+            setTimeout(function() {
+                canScroll = true
+            }, 2000)
+
+            scrollDown()
+        }
+    })
+})
+
+// Scroll arrows
 window.addEventListener('keydown', (_event) => {
     if(canScroll){
         // Accept the scroll
@@ -174,7 +177,7 @@ window.addEventListener('keydown', (_event) => {
     
 })
 
-// Mobile
+// Scroll mobile
 let touchStartY = null
 let touchEndY = null
 
@@ -218,7 +221,7 @@ window.addEventListener('touchend', (_event) => {
 })
 
 /**
- * Open and close the about
+ * About open and close
  */
 // Open
 const aboutOpenButtons = document.querySelectorAll('.js-about-open-button')
@@ -251,15 +254,18 @@ aboutCloseButton.addEventListener('click', () => {
 /**
  * Logo button
  */
-const home = document.querySelector('.js-home')
 const logos = document.querySelectorAll('.js-logo')
 
 logos.forEach(_logo => {
     _logo.addEventListener('click', () => {
-        home.style.opacity = 0
+        // Transition opacity
+        scrollTransition()
 
         // Reload the site
-        window.location.reload()
+        setTimeout(function() {
+            window.scrollTo(0, 0)
+            window.location.reload(true)
+        }, 380)
     })
 })
 
