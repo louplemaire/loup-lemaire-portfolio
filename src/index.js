@@ -140,7 +140,7 @@ window.addEventListener('wheel', (_event) => {
     }
 })
 
-// Scroll buttons
+// Scroll down buttons
 const scrollButtons = document.querySelectorAll('.js-scroll-button')
 
 scrollButtons.forEach(_scrollButton => {
@@ -156,7 +156,7 @@ scrollButtons.forEach(_scrollButton => {
     })
 })
 
-// Scroll arrows
+// Scroll arrows keys and close about with esc key
 window.addEventListener('keydown', (_event) => {
     if(canScroll){
         // Accept the scroll
@@ -164,17 +164,26 @@ window.addEventListener('keydown', (_event) => {
             canScroll = true
         }, 2000)
 
-        // Scroll down
+        // Scroll down with arrow down
         if(_event.keyCode == 40){
             scrollDown()
         }
 
-        // Scroll up
+        // Scroll up with arrow up
         if(_event.keyCode == 38){
             scrollUp()
         }
     }
-    
+
+    // Close about with esc key
+    if(_event.keyCode == 27){
+        aboutPage.style.opacity = 0
+
+        // Start display 400ms after the opacity to close the aboutPage after the 0.4s transition
+        setTimeout(function() {
+            aboutPage.classList.add('is-visible')
+        }, 400)
+    }
 })
 
 // Scroll mobile
@@ -228,10 +237,9 @@ const aboutOpenButtons = document.querySelectorAll('.js-about-open-button')
 const aboutPage = document.querySelector('.js-about')
 
 aboutOpenButtons.forEach(_aboutOpenButton => {
-    // Open
     _aboutOpenButton.addEventListener('click', () => {
         aboutPage.classList.remove('is-visible')
-        
+
         // Start opacity 1ms after the display to have the opacity transition
         setTimeout(function() {
             aboutPage.style.opacity = 1
