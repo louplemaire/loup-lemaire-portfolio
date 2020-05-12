@@ -124,7 +124,7 @@ canvas
         will-change opacity
         // Header
         .header
-            padding 30px 0px 40px 0px
+            padding 30px 0px 30px 0px
             display flex
             flex-direction row
             justify-content space-between
@@ -140,10 +140,15 @@ canvas
                 &:hover
                     opacity 0.6
         // Content
+        .project-content-position
+            position absolute
+            top 50%
+            left 50%
+            transform translate(-50%, -55%)
         .project-title
-                margin-bottom 30px
-                font-family $font-title
-                font-size $font-size-title
+            margin-bottom 30px
+            font-family $font-title
+            font-size $font-size-title
         .project-display-flex-row
             display flex
             flex-direction row
@@ -153,7 +158,8 @@ canvas
                     width 100%
                     height auto
             .project-info
-                margin 80px 0px 0px 150px
+                margin 80px 0px 0px 100px
+                width 22vw
                 .project-date
                 .project-tools
                 .project-role
@@ -172,8 +178,8 @@ canvas
                         line-height 24px
                         opacity 0.65
         .project-description
-            width 38vw
-            margin-top 30px
+            max-width 38vw
+            margin-top 20px
             font-family $font-text
             font-size $font-size-text
             line-height 24px
@@ -268,9 +274,11 @@ canvas
             flex-direction row
             justify-content space-between
             align-items center
-            padding 114px 150px 0px 150px
+            width 65vw
+            padding-top 150px
+            margin 0 auto
             .about-content
-                width 40vw
+                max-width 40vw
                 .about-me
                     .title
                         font-family $font-title
@@ -352,21 +360,21 @@ canvas
             padding 0px 30px
             // Header
             .header
-                padding 20px 0px 30px 0px
+                padding 20px 0px 20px 0px
                 .about-button
                     font-size $font-size-text
             // Content
             .project-title
-                    margin-bottom 20px
-                    font-size $font-size-subtitle
+                margin-bottom 20px
+                font-size $font-size-subtitle
             .project-display-flex-row
                 .project-image
                     width 84vw
                 .project-info
                     display none
             .project-description
-                width 84vw
-                margin-top 20px
+                max-width 84vw
+                margin-top 10px
                 font-size 0.875rem
                 line-height 21px
             // See project link
@@ -394,9 +402,10 @@ canvas
                 font-size $font-size-text
             // Content
             .about-display-flex-row
-                padding 84px 30px 0px 30px
+                width 100vw
+                padding 70px 30px 0px 30px
                 .about-content
-                    width 84vw
+                    max-width 84vw
                     .about-me
                         .title
                             font-size $font-size-subtitle
