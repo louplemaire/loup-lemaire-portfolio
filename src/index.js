@@ -90,7 +90,7 @@ const scrollTransition = () => {
 const scrollDown = () => {
     // Transition opacity
     scrollTransition()
-    
+
     setTimeout(function() {
         window.scrollBy(0, window.innerHeight)
     }, 400)
@@ -118,6 +118,9 @@ const scrollUp = () => {
 // Accept the scroll
 let canScroll = true
 
+// Number of projects
+const projectsNumber = 4
+
 // Desktop
 window.addEventListener('wheel', (_event) => {
     _event.preventDefault()
@@ -129,12 +132,12 @@ window.addEventListener('wheel', (_event) => {
         }, 2000)
 
         // Scroll down
-        if(_event.deltaY > 0){
+        if(_event.deltaY > 0 && window.scrollY != window.innerHeight * projectsNumber){
             scrollDown()
         }
 
         // Scroll up
-        if(_event.deltaY < 0){
+        if(_event.deltaY < 0 && window.scrollY != 0){
             scrollUp()
         }
     }
@@ -165,12 +168,12 @@ window.addEventListener('keydown', (_event) => {
         }, 2000)
 
         // Scroll down with arrow down
-        if(_event.keyCode == 40){
+        if(_event.keyCode == 40 && window.scrollY != window.innerHeight * projectsNumber){
             scrollDown()
         }
 
         // Scroll up with arrow up
-        if(_event.keyCode == 38){
+        if(_event.keyCode == 38 && window.scrollY != 0){
             scrollUp()
         }
     }
@@ -214,12 +217,12 @@ window.addEventListener('touchend', (_event) => {
         const offset = touchEndY - touchStartY
 
         // Scroll down
-        if(offset < -50){
+        if(offset < -50 && window.scrollY != window.innerHeight * projectsNumber){
             scrollDown()
         }
 
         // Scroll up
-        if(offset > 50){
+        if(offset > 50 && window.scrollY != 0){
             scrollUp()
         }
 
