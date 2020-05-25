@@ -368,6 +368,7 @@ const particlesMaterial = new THREE.PointsMaterial({
     alphaMap: particleTexture,
     transparent: true,
     color: new THREE.Color(0XFAF8F8),
+    opacity: 0.65,
     blending: THREE.AdditiveBlending,
     depthWrite: false
 })
