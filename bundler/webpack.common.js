@@ -24,6 +24,13 @@ module.exports = {
     {
         rules:
         [
+            // HTML
+            {
+                test: /\.(html)$/,
+                use: ['html-loader']
+            },
+
+            // CSS
             {
                 test: /\.css$/,
                 use:
@@ -32,6 +39,8 @@ module.exports = {
                     'css-loader'
                 ]
             },
+
+            // Stylus
             {
                 test: /\.styl$/,
                 use:
@@ -41,6 +50,18 @@ module.exports = {
                     'stylus-loader'
                 ]
             },
+
+            // JS
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use:
+                [
+                    'babel-loader'
+                ]
+            },
+
+            // Images
             {
                 test: /\.(jpg|png|gif|svg)$/,
                 use:
@@ -49,11 +70,13 @@ module.exports = {
                         loader: 'file-loader',
                         options:
                         {
-                            outputPath: 'images/'
+                            outputPath: 'assets/images/'
                         }
                     }
                 ]
             },
+
+            // Fonts
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
                 use:
@@ -62,21 +85,24 @@ module.exports = {
                         loader: 'file-loader',
                         options:
                         {
-                            outputPath: 'fonts/'
+                            outputPath: 'assets/fonts/'
                         }
                     }
                 ]
             },
+
+            // Audios
             {
-                test: /\.(html)$/,
-                use: ['html-loader']
-            },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
+                test: /\.(mp3|wav|ogg)$/,
                 use:
                 [
-                    'babel-loader'
+                    {
+                        loader: 'file-loader',
+                        options:
+                        {
+                            outputPath: 'assets/audios/'
+                        }
+                    }
                 ]
             }
         ]
