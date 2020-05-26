@@ -3,7 +3,7 @@
  */
 // Import fonts
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap')
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swa')
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap')
 
 // Fonts
 $font-title = 'Playfair Display', cursive
@@ -70,6 +70,7 @@ body
     height 100vh
     height calc(var(--vh, 1vh) * 100)
     color $color-white
+    overflow hidden
     transition opacity 0.4s ease-in-out
     will-change opacity
     // Title
@@ -167,11 +168,19 @@ body
         .project-display-flex-row
             display flex
             flex-direction row
-            .project-image
+            .project-content
                 width 38vw
-                img
-                    width 100%
-                    height auto
+                .project-image
+                    max-width 638px
+                    img
+                        width 100%
+                        height auto
+                .project-description
+                    max-width 638px
+                    margin-top 20px
+                    font-family $font-text
+                    font-size $font-size-text
+                    line-height 24px
             .project-info
                 margin 80px 0px 0px 100px
                 width 22vw
@@ -192,12 +201,6 @@ body
                         font-size $font-size-text
                         line-height 24px
                         opacity 0.65
-        .project-description
-            max-width 38vw
-            margin-top 20px
-            font-family $font-text
-            font-size $font-size-text
-            line-height 24px
         // See project link
         .see-project
             position absolute
@@ -287,13 +290,11 @@ body
         .about-display-flex-row
             display flex
             flex-direction row
-            justify-content space-between
+            justify-content center
             align-items center
-            width 65vw
-            padding-top 150px
-            margin 0 auto
+            padding 150px 150px 0px 150px
             .about-content
-                max-width 40vw
+                max-width 612px
                 .about-me
                     .title
                         font-family $font-title
@@ -327,7 +328,8 @@ body
                                     opacity 0.6
             .loup-image
                 margin-left 100px
-                max-width 22vw
+                width 20vw
+                max-width 336px
                 img
                     width 100%
                     height auto
@@ -388,15 +390,17 @@ body
                 margin-bottom 20px
                 font-size $font-size-subtitle
             .project-display-flex-row
-                .project-image
+                .project-content
                     width 84vw
+                    .project-image
+                        max-width none
+                    .project-description
+                        max-width none
+                        margin-top 10px
+                        font-size 0.875rem
+                        line-height 21px
                 .project-info
                     display none
-            .project-description
-                max-width 84vw
-                margin-top 10px
-                font-size 0.875rem
-                line-height 21px
             // See project link
             .see-project
                 right 30px
@@ -422,10 +426,9 @@ body
                 font-size $font-size-text
             // Content
             .about-display-flex-row
-                width 100vw
                 padding 70px 30px 0px 30px
                 .about-content
-                    max-width 84vw
+                    max-width 538px
                     .about-me
                         .title
                             font-size $font-size-subtitle
