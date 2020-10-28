@@ -11,6 +11,15 @@ import particleImageSource from './assets/particle/bubble.png'
 /**
  * Images
  */
+// Meteora
+import meteoraImage from './assets/images/meteora.png'
+
+const meteoraImageContainer = document.querySelector('.js-meteora-image')
+const $meteoraImage = new Image()
+$meteoraImage.src = meteoraImage
+meteoraImageContainer.appendChild($meteoraImage)
+$meteoraImage.setAttribute('alt', 'METEORA image')
+
 // Savoir
 import savoirImage from './assets/images/savoir.png'
 
@@ -123,9 +132,9 @@ const scrollUp = () => {
 let canScroll = true
 
 // Number of projects
-const projectsNumber = 4
+const projectsNumber = 5
 
-// Desktop
+// Scroll desktop
 window.addEventListener('wheel', (_event) => {
     _event.preventDefault()
 
