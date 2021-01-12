@@ -185,9 +185,11 @@ body
                 margin 80px 0px 0px 100px
                 width 22vw
                 .project-date
-                .project-tools
                 .project-role
                     margin-bottom 30px
+                .project-date
+                .project-tools
+                .project-role
                     .date-subtitle
                     .tools-subtitle
                     .role-subtitle
@@ -318,8 +320,9 @@ body
                         flex-direction column
                         div
                             padding  5px 0px 5px 0px
-                            a
+                            a:not(:last-child)
                                 margin-right 20px
+                            a
                                 color $color-white
                                 text-decoration none
                                 transition opacity 0.3s ease-in-out
