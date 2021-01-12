@@ -18,7 +18,7 @@ module.exports = {
             minify: true
         }),
         new MiniCssExtractPlugin(),
-        new CopyWebpackPlugin([ { from: 'static' } ])
+        new CopyWebpackPlugin({ patterns: [{ from: 'static' }] })
     ],
     module:
     {
