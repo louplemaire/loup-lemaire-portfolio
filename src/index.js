@@ -29,15 +29,6 @@ $savoirImage.src = savoirImage
 savoirImageContainer.appendChild($savoirImage)
 $savoirImage.setAttribute('alt', 'SAVOIR image')
 
-// Ode Brew Grinder
-import odeBrewGrinderImage from './assets/images/ode-brew-grinder.png'
-
-const odeBrewGrinderImageContainer = document.querySelector('.js-ode-brew-grinder-image')
-const $odeBrewGrinderImage = new Image()
-$odeBrewGrinderImage.src = odeBrewGrinderImage
-odeBrewGrinderImageContainer.appendChild($odeBrewGrinderImage)
-$odeBrewGrinderImage.setAttribute('alt', 'Ode Brew Grinder image')
-
 // EO Securite
 import eoSecuriteImage from './assets/images/eo-securite.png'
 
@@ -132,7 +123,7 @@ const scrollUp = () => {
 let canScroll = true
 
 // Number of projects
-const projectsNumber = 5
+const projectsNumber = 4
 
 // Scroll desktop
 window.addEventListener('wheel', (_event) => {
