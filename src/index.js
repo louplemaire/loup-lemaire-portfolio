@@ -417,7 +417,7 @@ const loop = () => {
     context.beginPath()
     context.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2)
     context.globalAlpha = 1
-    context.strokeStyle = '#E40404'
+    context.strokeStyle = '#FFFFFF'
     context.stroke()
 
     /**
