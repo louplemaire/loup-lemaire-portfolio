@@ -424,8 +424,9 @@ const loop = () => {
      * Three.js home
      */
     // Particles
-    particles.rotation.y += 0.003
-    particles.rotation.z += 0.002
+    const date = Date.now()
+    particles.rotation.y = date * 0.0002
+    particles.rotation.z = date * 0.0001
 
     // Camera
     camera.lookAt(scene.position)
